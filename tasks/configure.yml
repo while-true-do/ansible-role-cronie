@@ -1,9 +1,5 @@
 ---
 # tasks/configure.yml for cronie
-- name: Include Hardening Variables
-  include_vars: secure.yml
-  when: wtd_cronie_hardening
-
 - name: Set cron.allow
   template:
     src: cron.allow.j2
