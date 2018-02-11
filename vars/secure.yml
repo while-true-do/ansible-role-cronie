@@ -1,0 +1,4 @@
+---
+# vars/secure.yml for cronie
+wtd_cronie_allows: ["root"]
+wtd_cronie_denys: []

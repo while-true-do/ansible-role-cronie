@@ -1,0 +1,24 @@
+---
+# tasks/main.yml for cronie
+- name: Set cronie to "{{ wtd_cronie_state }}"
+  package:
+    name: "{{ item }}"
+    state: "{{ wtd_cronie_state }}"
+  with_items: "{{ wtd_cronie_packages }}"
+  tags:
+    - cronie
+    - cron
+
+- name: Include Configuration Tasks
+  include_tasks: configure.yml
+  when: wtd_cronie_state != "absent"
+
+- name: Enable and Start crond
+  service:
+    name: crond
+    state: started
+    enabled: yes
+  when: wtd_cronie_state != "absent"
+  tags:
+    - cronie
+    - cron

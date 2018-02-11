@@ -1,0 +1,35 @@
+---
+# tasks/configure.yml for cronie
+- name: Include Hardening Variables
+  include_vars: secure.yml
+  when: wtd_cronie_hardening
+
+- name: Set cron.allow
+  template:
+    src: cron.allow.j2
+    dest: /etc/cron.allow
+    owner: root
+    group: root
+    mode: 0600
+  when: wtd_cronie_allows
+
+- name: Set cron.deny
+  template:
+    src: cron.deny.j2
+    dest: /etc/cron.deny
+    owner: root
+    group: root
+    mode: 0600
+  when: wtd_cronie_denys
+
+- name: Remove conflicting cron.deny
+  file:
+    path: /etc/cron.deny
+    state: absent
+  when: wtd_cronie_allows
+
+- name: Remove conflicting cron.allow
+  file:
+    path: /etc/cron.allow
+    state: absent
+  when: wtd_cronie_denys and not wtd_cronie_allows
