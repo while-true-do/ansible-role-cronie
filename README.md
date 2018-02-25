@@ -44,18 +44,12 @@ None.
 wtd_cronie_state: "present"
 wtd_cronie_packages: ["cronie"]
 
+# Hardening related Variables
 # All user listed in cron.allows will be allowd to use cron
 # cron.denys will be ignored, if cron.allows is used
 # cron.allow will always "beat" cron.deny
 wtd_cronie_allows: ["root"]
 # All users listed in cron.denys will be forbidden to use cron
-wtd_cronie_denys: []
-```
-
-```yaml
----
-# vars/secure.yml for cronie
-wtd_cronie_allows: ["root"]
 wtd_cronie_denys: []
 ```
 
