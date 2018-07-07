@@ -9,16 +9,16 @@ Cronie contains the standard UNIX daemon crond that runs specified programs at s
 
 ## Installation
 
-Install from [Ansible Galaxy](https://galaxy.ansible.com/while-true-do/cronie)
+Install from [Ansible Galaxy](https://galaxy.ansible.com/while_true_do/cronie)
 
 ```
-ansible-galaxy install while-true-do.cronie
+ansible-galaxy install while_true_do.cronie
 ```
 
 Install from [Github](https://github.com/while-true-do/ansible-role-cronie)
 
 ```
-git clone https://github.com/while-true-do/ansible-role-cronie.git while-true-do.cronie
+git clone https://github.com/while-true-do/ansible-role-cronie.git while_true_do.cronie
 ```
 
 ## Requirements
@@ -60,7 +60,7 @@ Simple Example:
 ```yaml
 - hosts: servers 
   roles:
-    - { role: while-true-do.cronie }
+    - { role: while_true_do.cronie }
 ```
 
 ## Testing
