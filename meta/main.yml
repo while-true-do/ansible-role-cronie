@@ -1,6 +1,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: cronie
   author: while-true-do.org
   description: A role to install and configure Cronie / Crontabs.
   company: while-true-do.org
